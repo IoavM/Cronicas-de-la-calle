@@ -1,0 +1,143 @@
+/* ============================================================
+   FOOTER — Cultural project footer
+   ============================================================ */
+
+.footer {
+  background-color: var(--color-texto-oscuro);
+  color: var(--color-fondo-crema);
+  padding: var(--space-3xl) 0 var(--space-lg);
+}
+
+/* ---- Grid ---- */
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+}
+
+/* ---- Brand ---- */
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  color: var(--color-fondo-crema);
+}
+
+.footer__brand:hover {
+  color: var(--color-acento-primario);
+}
+
+.footer__brand-icon {
+  font-size: 1.5rem;
+  color: var(--color-acento-primario);
+}
+
+.footer__brand-name {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+.footer__tagline {
+  font-size: var(--size-small);
+  color: var(--color-tierra-suave);
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+/* ---- Links ---- */
+
+.footer__section-title {
+  font-family: var(--font-text);
+  font-size: var(--size-small);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-verde-suave);
+  margin-bottom: var(--space-md);
+}
+
+.footer__link-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.footer__link {
+  font-size: var(--size-small);
+  color: var(--color-tierra-suave);
+  transition: var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: var(--color-blanco);
+  padding-left: 4px;
+}
+
+/* ---- Credits ---- */
+
+.footer__credits {
+  font-size: var(--size-small);
+  color: var(--color-tierra-suave);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ---- Bottom ---- */
+
+.footer__bottom {
+  text-align: center;
+}
+
+.footer__bottom-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-tierra-suave),
+    transparent
+  );
+  opacity: 0.3;
+  margin-bottom: var(--space-md);
+}
+
+.footer__copyright {
+  font-size: var(--size-caption);
+  color: var(--color-tierra);
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   RESPONSIVE — 800px
+   ============================================================ */
+
+@media (max-width: 800px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer__credits-section {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 480px
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .footer {
+    padding: var(--space-2xl) 0 var(--space-md);
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}

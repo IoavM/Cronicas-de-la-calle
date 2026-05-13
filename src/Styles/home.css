@@ -1,0 +1,191 @@
+/* ============================================================
+   HOME PAGE — Landing and discovery
+   ============================================================ */
+
+/* ---- Places Preview Section ---- */
+
+.home-intro {
+  background-color: var(--color-fondo-claro);
+  text-align: center;
+}
+
+.home-intro__title {
+  font-family: var(--font-editorial);
+  font-size: var(--size-h2);
+  color: var(--color-texto-oscuro);
+  margin-bottom: var(--space-sm);
+}
+
+.home-intro__subtitle {
+  font-size: var(--size-body-lg);
+  color: var(--color-texto-medio);
+  max-width: 650px;
+  margin: 0 auto var(--space-2xl);
+  line-height: 1.8;
+}
+
+/* ---- Places Grid ---- */
+
+.home-places {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.home-place-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-blanco);
+}
+
+.home-place-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.home-place-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.home-place-card:hover .home-place-card__image {
+  transform: scale(1.08);
+}
+
+.home-place-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(26, 26, 26, 0.6) 40%,
+    rgba(26, 26, 26, 0.95) 100%
+  );
+  transition: var(--transition-smooth);
+}
+
+.home-place-card:hover .home-place-card__overlay {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(26, 26, 26, 0.7) 30%,
+    rgba(26, 26, 26, 0.98) 100%
+  );
+}
+
+.home-place-card__content {
+  position: relative;
+  z-index: var(--z-base);
+  padding: var(--space-lg);
+}
+
+.home-place-card__label {
+  display: inline-block;
+  font-size: var(--size-caption);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-verde-suave);
+  margin-bottom: var(--space-xs);
+}
+
+.home-place-card__title {
+  font-family: var(--font-title);
+  font-size: var(--size-h3);
+  color: var(--color-blanco);
+  margin-bottom: var(--space-xs);
+  line-height: 1.2;
+}
+
+.home-place-card__excerpt {
+  font-size: var(--size-small);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+}
+
+.home-place-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--size-small);
+  font-weight: var(--weight-semibold);
+  color: var(--color-verde-suave);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition-fast);
+}
+
+.home-place-card:hover .home-place-card__cta {
+  gap: var(--space-sm);
+}
+
+/* ---- Manifesto Section ---- */
+
+.home-manifesto {
+  background-color: var(--color-fondo-crema);
+  text-align: center;
+}
+
+.home-manifesto__text {
+  font-family: var(--font-editorial);
+  font-size: var(--size-h3);
+  font-style: italic;
+  color: var(--color-texto-medio);
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-wrap: balance;
+}
+
+/* ============================================================
+   RESPONSIVE — 800px
+   ============================================================ */
+
+@media (max-width: 800px) {
+  .home-places {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-place-card {
+    height: 320px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 480px
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .home-place-card {
+    height: 280px;
+  }
+
+  .home-place-card__title {
+    font-size: var(--size-h4);
+  }
+
+  .home-manifesto__text {
+    font-size: var(--size-body-lg);
+  }
+}

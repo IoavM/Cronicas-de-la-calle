@@ -1,0 +1,9 @@
+{
+  "brand": "Crónicas de la Calle",
+  "links": [
+    { "label": "Inicio", "path": "/" },
+    { "label": "Metro", "path": "/metro" },
+    { "label": "Plaza Botero", "path": "/plaza-botero" },
+    { "label": "Atanasio", "path": "/atanasio" }
+  ]
+}

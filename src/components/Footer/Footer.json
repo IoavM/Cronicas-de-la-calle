@@ -1,0 +1,16 @@
+{
+  "brand": "Crónicas de la Calle",
+  "tagline": "Memoria urbana y patrimonio cultural de Medellín",
+  "sections": [
+    {
+      "title": "Lugares",
+      "links": [
+        { "label": "Metro de Medellín", "path": "/metro" },
+        { "label": "Plaza Botero", "path": "/plaza-botero" },
+        { "label": "Estadio Atanasio Girardot", "path": "/atanasio" }
+      ]
+    }
+  ],
+  "credits": "Un proyecto artístico y cultural sobre la memoria patrimonial de Medellín, Antioquia.",
+  "copyright": "© 2026 Crónicas de la Calle. Todos los derechos reservados."
+}

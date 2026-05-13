@@ -1,0 +1,43 @@
+/* ============================================================
+   METRO PAGE — Metro de Medellín
+   ============================================================ */
+
+.metro-page .story {
+  background-color: var(--color-fondo-claro);
+}
+
+.metro-page .gallery {
+  background-color: var(--color-fondo-calido);
+}
+
+.metro-page .testimonial {
+  background-color: var(--color-fondo-crema);
+}
+
+/* ---- Reflection ---- */
+
+.metro-reflection {
+  background-color: var(--color-fondo-claro);
+  text-align: center;
+}
+
+.metro-reflection__text {
+  font-family: var(--font-editorial);
+  font-size: var(--size-h3);
+  font-style: italic;
+  color: var(--color-texto-medio);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-wrap: balance;
+}
+
+/* ============================================================
+   RESPONSIVE — 480px
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .metro-reflection__text {
+    font-size: var(--size-body-lg);
+  }
+}

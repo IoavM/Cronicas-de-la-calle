@@ -1,0 +1,202 @@
+/* ============================================================
+   HERO — Fullscreen cinematic hero section
+   ============================================================ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ---- Background ---- */
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.05);
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.12); }
+}
+
+/* ---- Overlay ---- */
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 249, 240, 0.3) 0%,
+    rgba(250, 248, 245, 0.45) 30%,
+    rgba(250, 248, 245, 0.55) 60%,
+    rgba(250, 248, 245, 0.75) 100%
+  );
+}
+
+/* ---- Content ---- */
+
+.hero__content {
+  position: relative;
+  z-index: var(--z-base);
+  text-align: center;
+  max-width: 900px;
+  padding: 0 var(--space-lg);
+  animation: heroFadeIn 1.2s ease-out;
+}
+
+@keyframes heroFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__label {
+  display: inline-block;
+  font-family: var(--font-text);
+  font-size: var(--size-small);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--color-negro);
+  margin-bottom: var(--space-md);
+  position: relative;
+  padding: 0 var(--space-lg);
+}
+
+.hero__label::before,
+.hero__label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 1.5rem;
+  height: 1px;
+  background-color: var(--color-negro);
+}
+
+.hero__label::before { left: 0; }
+.hero__label::after { right: 0; }
+
+.hero__title {
+  font-family: var(--font-title);
+  font-size: var(--size-display);
+  color: var(--color-negro);
+  margin-bottom: var(--space-md);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.hero__subtitle {
+  font-family: var(--font-editorial);
+  font-size: var(--size-h4);
+  font-weight: var(--weight-light);
+  color: var(--color-negro);
+  font-style: italic;
+  margin-bottom: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Scroll Indicator ---- */
+
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: var(--space-xl);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-negro);
+  transition: var(--transition-smooth);
+  animation: heroFadeIn 1.2s ease-out 0.6s both;
+  z-index: var(--z-base);
+}
+
+.hero__scroll-indicator:hover {
+  color: var(--color-acento-primario);
+  transform: translateX(-50%) translateY(5px);
+}
+
+.hero__scroll-text {
+  font-size: var(--size-caption);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.hero__scroll-arrow {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ============================================================
+   RESPONSIVE — 800px
+   ============================================================ */
+
+@media (max-width: 800px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero__title {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .hero__subtitle {
+    font-size: var(--size-body);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 480px
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero__content {
+    padding: 0 var(--space-sm);
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .hero__label {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+  }
+
+  .hero__scroll-indicator {
+    bottom: var(--space-lg);
+  }
+}

@@ -1,0 +1,43 @@
+/* ============================================================
+   PLAZA BOTERO PAGE
+   ============================================================ */
+
+.botero-page .story {
+  background-color: var(--color-fondo-claro);
+}
+
+.botero-page .gallery {
+  background-color: var(--color-fondo-calido);
+}
+
+.botero-page .testimonial {
+  background-color: var(--color-fondo-crema);
+}
+
+/* ---- Reflection ---- */
+
+.botero-reflection {
+  background-color: var(--color-fondo-claro);
+  text-align: center;
+}
+
+.botero-reflection__text {
+  font-family: var(--font-editorial);
+  font-size: var(--size-h3);
+  font-style: italic;
+  color: var(--color-texto-medio);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-wrap: balance;
+}
+
+/* ============================================================
+   RESPONSIVE — 480px
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .botero-reflection__text {
+    font-size: var(--size-body-lg);
+  }
+}

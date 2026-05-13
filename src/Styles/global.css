@@ -1,0 +1,356 @@
+/* ============================================================
+   GLOBAL STYLES — Crónicas de la Calle
+   Sistema de diseño cultural e inmersivo
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   ============================================================ */
+
+:root {
+
+  /* ---- COLORS ---- */
+  --color-fondo-claro: #FAF8F5;
+  --color-fondo-crema: #F5F0E8;
+  --color-fondo-calido: #FFF9F0;
+  --color-acento-primario: #7CAE3E;
+  --color-acento-secundario: #5B8C2A;
+  --color-verde-suave: #A8CC7A;
+  --color-verde-claro: #D4E6B6;
+  --color-amarillo-sol: #F2C94C;
+  --color-amarillo-suave: #FDF0D5;
+  --color-azul-cielo: #8ECAE6;
+  --color-azul-claro: #C5E4F3;
+  --color-tierra: #A0826D;
+  --color-tierra-suave: #D4C4B0;
+  --color-texto-oscuro: #000000;
+  --color-texto-medio: #1A1A1A;
+  --color-texto-suave: #333333;
+  --color-blanco: #FFFFFF;
+  --color-negro: #1A1A1A;
+  --color-overlay-claro: rgba(250, 248, 245, 0.85);
+  --color-overlay-calido: rgba(255, 249, 240, 0.7);
+  --color-sombra: rgba(44, 24, 16, 0.08);
+
+  /* ---- TYPOGRAPHY ---- */
+  --font-title: 'Righteous', sans-serif;
+  --font-editorial: 'Playfair Display', serif;
+  --font-text: 'Montserrat', sans-serif;
+
+  /* ---- FONT SIZES ---- */
+  --size-display: clamp(3rem, 6vw, 5.5rem);
+  --size-h1: clamp(2.5rem, 5vw, 5rem);
+  --size-h2: clamp(2rem, 3.5vw, 3rem);
+  --size-h3: clamp(1.5rem, 2.5vw, 2rem);
+  --size-h4: clamp(1.2rem, 2vw, 1.5rem);
+  --size-body: clamp(1rem, 1.2vw, 1.2rem);
+  --size-body-lg: clamp(1.1rem, 1.5vw, 1.4rem);
+  --size-small: clamp(0.85rem, 1vw, 0.95rem);
+  --size-caption: 0.8rem;
+
+  /* ---- FONT WEIGHTS ---- */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- SPACING ---- */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+  --space-section: clamp(4rem, 8vw, 8rem);
+
+  /* ---- LAYOUT ---- */
+  --max-width: 1200px;
+  --max-width-narrow: 800px;
+  --max-width-wide: 1400px;
+
+  /* ---- BORDERS ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 50%;
+
+  /* ---- SHADOWS ---- */
+  --shadow-soft: 0 4px 20px rgba(44, 24, 16, 0.06);
+  --shadow-medium: 0 8px 40px rgba(44, 24, 16, 0.1);
+  --shadow-elevated: 0 16px 60px rgba(44, 24, 16, 0.12);
+  --shadow-glow: 0 0 40px rgba(124, 174, 62, 0.15);
+
+  /* ---- TRANSITIONS ---- */
+  --transition-fast: all 0.2s ease;
+  --transition-smooth: all 0.4s ease;
+  --transition-slow: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-dramatic: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* ---- Z-INDEX ---- */
+  --z-base: 1;
+  --z-overlay: 10;
+  --z-navbar: 100;
+  --z-modal: 1000;
+}
+
+/* ============================================================
+   RESET & BASE STYLES
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--size-body);
+  font-weight: var(--weight-regular);
+  line-height: 1.7;
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto-oscuro);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: var(--weight-bold);
+}
+
+h1 {
+  font-family: var(--font-title);
+  font-size: var(--size-h1);
+}
+
+h2 {
+  font-family: var(--font-editorial);
+  font-size: var(--size-h2);
+}
+
+h3 {
+  font-family: var(--font-editorial);
+  font-size: var(--size-h3);
+}
+
+h4 {
+  font-family: var(--font-text);
+  font-size: var(--size-h4);
+  font-weight: var(--weight-semibold);
+}
+
+p {
+  margin-bottom: var(--space-sm);
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.container--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+.container--wide {
+  max-width: var(--max-width-wide);
+}
+
+.section {
+  padding: var(--space-section) 0;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-text);
+  font-size: var(--size-small);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-acento-primario);
+  margin-bottom: var(--space-md);
+  position: relative;
+  padding-left: 2rem;
+}
+
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 2px;
+  background-color: var(--color-acento-primario);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================================
+   SELECTION STYLES
+   ============================================================ */
+
+::selection {
+  background-color: var(--color-verde-suave);
+  color: var(--color-texto-oscuro);
+}
+
+/* ============================================================
+   SCROLLBAR STYLES
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-fondo-claro);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-tierra-suave);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tierra);
+}
+
+/* ============================================================
+   FOCUS STYLES (ACCESSIBILITY)
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-acento-primario);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================================
+   LOADING SCREEN
+   ============================================================ */
+
+.loading-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-fondo-claro);
+}
+
+.loading-screen__content {
+  text-align: center;
+  animation: loadingPulse 2s ease-in-out infinite;
+}
+
+.loading-screen__icon {
+  font-size: 2.5rem;
+  color: var(--color-acento-primario);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.loading-screen__text {
+  font-family: var(--font-text);
+  font-size: var(--size-small);
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+@keyframes loadingPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================ */
+
+@media (max-width: 800px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  body {
+    line-height: 1.6;
+  }
+}

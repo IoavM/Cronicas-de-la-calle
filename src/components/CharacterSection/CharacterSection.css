@@ -1,0 +1,109 @@
+/* ============================================================
+   CHARACTER SECTION — Placeholder for future character
+   ============================================================ */
+
+.character {
+  background-color: var(--color-fondo-claro);
+  position: relative;
+}
+
+.character__content {
+  text-align: center;
+}
+
+.character__title {
+  font-family: var(--font-editorial);
+  font-size: var(--size-h2);
+  color: var(--color-texto-oscuro);
+  margin-bottom: var(--space-sm);
+}
+
+.character__divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-acento-primario), var(--color-amarillo-sol));
+  margin: 0 auto var(--space-lg);
+  border-radius: var(--radius-full);
+}
+
+.character__description {
+  font-size: var(--size-body-lg);
+  color: var(--color-texto-medio);
+  max-width: 600px;
+  margin: 0 auto var(--space-2xl);
+  line-height: 1.8;
+}
+
+/* ---- Placeholder Frame ---- */
+
+.character__placeholder {
+  display: flex;
+  justify-content: center;
+}
+
+.character__placeholder-frame {
+  width: 300px;
+  height: 380px;
+  border: 2px dashed var(--color-tierra-suave);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 230, 182, 0.1) 0%,
+    rgba(253, 240, 213, 0.15) 50%,
+    rgba(197, 228, 243, 0.1) 100%
+  );
+  transition: var(--transition-smooth);
+}
+
+.character__placeholder-frame:hover {
+  border-color: var(--color-acento-primario);
+  box-shadow: var(--shadow-glow);
+}
+
+.character__placeholder-icon {
+  font-size: 3rem;
+  color: var(--color-tierra-suave);
+  animation: characterFloat 3s ease-in-out infinite;
+}
+
+@keyframes characterFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.character__placeholder-name {
+  font-family: var(--font-editorial);
+  font-size: var(--size-h4);
+  color: var(--color-texto-medio);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.character__placeholder-badge {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  background-color: var(--color-amarillo-suave);
+  color: var(--color-texto-medio);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: var(--radius-full);
+}
+
+/* ============================================================
+   RESPONSIVE — 480px
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .character__placeholder-frame {
+    width: 240px;
+    height: 300px;
+  }
+}

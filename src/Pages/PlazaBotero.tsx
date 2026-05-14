@@ -9,6 +9,7 @@ import '../Styles/plazabotero.css';
 
 import heroBotero from '../assets/images/plaza-botero/hero-botero.png';
 import galleryBotero1 from '../assets/images/plaza-botero/gallery-botero-1.png';
+import guardianaImg from '../assets/images/plaza-botero/guardiana.webp';
 
 export default function PlazaBotero() {
   useScrollReveal();
@@ -89,8 +90,15 @@ export default function PlazaBotero() {
 
       <CharacterSection
         title="La Guardiana de las Formas"
-        description="Un personaje inspirado en la generosidad volumétrica de Botero y en la energía protectora de quienes cuidan la plaza cada día. Será revelada como parte de una experiencia artística expandida."
         characterName="La Guardiana de las Formas"
+        characterImage={guardianaImg}
+        imagePosition="left"
+        story={[
+          'Ella llegó a la plaza el mismo día que las esculturas. Mientras los camiones descargaban las enormes figuras de bronce y los obreros las instalaban con cuidado sobre sus pedestales, una mujer se sentó en la banca más cercana y no se volvió a ir.',
+          'La Guardiana no tiene nombre conocido. Los vendedores de tintos la llaman "Doña Forma", los lustrabotas le dicen "La Señora de las Gordas", los niños simplemente la señalan y preguntan si ella también es de bronce. Lleva siempre un vestido amplio que parece flotar cuando camina entre las esculturas, como si el viento la tratara con la misma delicadeza con que Botero esculpía sus figuras.',
+          'Cada mañana hace su ronda. Toca cada escultura con la palma abierta, como si verificara que sigan ahí, que nadie se las haya llevado en la noche. Les habla en voz baja. Les cuenta las noticias del día, los chismes del barrio, los nombres de los turistas que vinieron a fotografiarlas. Dice que las esculturas le responden, que el bronce tibio del mediodía es su forma de decir gracias.',
+          'La Guardiana de las Formas es la generosidad hecha presencia. Es la certeza de que el arte público no pertenece a un museo ni a un coleccionista, sino a quien decide, cada día, sentarse frente a él y hacerle compañía. Ella cuida las formas porque entiende algo que muchos olvidan: lo bello solo sobrevive si alguien lo mira con amor.',
+        ]}
       />
 
       <MediaSection

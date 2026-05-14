@@ -1,5 +1,5 @@
 /* ============================================================
-   CHARACTER SECTION — Placeholder for future character
+   CHARACTER SECTION — Two-column character showcase
    ============================================================ */
 
 .character {
@@ -7,8 +7,11 @@
   position: relative;
 }
 
-.character__content {
+/* ---- Header (centered title) ---- */
+
+.character__header {
   text-align: center;
+  margin-bottom: var(--space-2xl);
 }
 
 .character__title {
@@ -22,79 +25,127 @@
   width: 60px;
   height: 3px;
   background: linear-gradient(90deg, var(--color-acento-primario), var(--color-amarillo-sol));
-  margin: 0 auto var(--space-lg);
+  margin: 0 auto;
   border-radius: var(--radius-full);
 }
 
-.character__description {
+/* ---- Two-column grid ---- */
+
+.character__grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--space-2xl);
+  align-items: stretch;
+  min-height: 650px;
+}
+
+/* Default: text left, image right */
+/* Reversed: image left, text right */
+.character__grid--image-left {
+  direction: rtl;
+}
+
+.character__grid--image-left>* {
+  direction: ltr;
+}
+
+/* ---- Text column ---- */
+
+.character__text {
+  padding-right: var(--space-lg);
+}
+
+.character__grid--image-left .character__text {
+  padding-right: 0;
+  padding-left: var(--space-lg);
+}
+
+.character__name {
+  font-family: var(--font-title);
+  font-size: var(--size-h3);
+  color: var(--color-texto-oscuro);
+  margin-bottom: var(--space-lg);
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+.character__name::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-acento-primario);
+}
+
+.character__grid--image-left .character__name::after {
+  left: auto;
+  right: 0;
+}
+
+.character__story-paragraph {
   font-size: var(--size-body-lg);
   color: var(--color-texto-medio);
-  max-width: 600px;
-  margin: 0 auto var(--space-2xl);
-  line-height: 1.8;
+  line-height: 1.9;
+  margin-bottom: var(--space-md);
 }
 
-/* ---- Placeholder Frame ---- */
-
-.character__placeholder {
-  display: flex;
-  justify-content: center;
-}
-
-.character__placeholder-frame {
-  width: 300px;
-  height: 380px;
-  border: 2px dashed var(--color-tierra-suave);
-  border-radius: var(--radius-xl);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(212, 230, 182, 0.1) 0%,
-    rgba(253, 240, 213, 0.15) 50%,
-    rgba(197, 228, 243, 0.1) 100%
-  );
-  transition: var(--transition-smooth);
-}
-
-.character__placeholder-frame:hover {
-  border-color: var(--color-acento-primario);
-  box-shadow: var(--shadow-glow);
-}
-
-.character__placeholder-icon {
-  font-size: 3rem;
-  color: var(--color-tierra-suave);
-  animation: characterFloat 3s ease-in-out infinite;
-}
-
-@keyframes characterFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.character__placeholder-name {
-  font-family: var(--font-editorial);
-  font-size: var(--size-h4);
-  color: var(--color-texto-medio);
-  font-style: italic;
+.character__story-paragraph:last-child {
   margin-bottom: 0;
 }
 
-.character__placeholder-badge {
-  display: inline-block;
-  padding: var(--space-xs) var(--space-md);
-  background-color: var(--color-amarillo-suave);
-  color: var(--color-texto-medio);
-  font-size: var(--size-caption);
-  font-weight: var(--weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: var(--radius-full);
+/* ---- Image column ---- */
+
+.character__image-space {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  min-height: 650px;
+}
+
+.character__image {
+  width: 100%;
+  height: 100%;
+  max-height: 1000px;
+  object-fit: none;
+}
+
+.character__image-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   RESPONSIVE — 800px
+   ============================================================ */
+
+@media (max-width: 800px) {
+  .character__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .character__grid--image-left {
+    direction: ltr;
+  }
+
+  .character__text {
+    padding-right: 0;
+  }
+
+  .character__grid--image-left .character__text {
+    padding-left: 0;
+  }
+
+  .character__image-space {
+    min-height: 350px;
+    order: -1;
+  }
+
+  .character__image-placeholder {
+    height: 350px;
+  }
 }
 
 /* ============================================================
@@ -102,8 +153,11 @@
    ============================================================ */
 
 @media (max-width: 480px) {
-  .character__placeholder-frame {
-    width: 240px;
-    height: 300px;
+  .character__image-space {
+    min-height: 280px;
+  }
+
+  .character__image-placeholder {
+    height: 280px;
   }
 }

@@ -9,6 +9,7 @@ import '../Styles/atanasio.css';
 
 import heroAtanasio from '../assets/images/atanasio/hero-atanasio.png';
 import galleryAtanasio1 from '../assets/images/atanasio/gallery-atanasio-1.png';
+import hernanImg from '../assets/images/atanasio/Hernan.webp';
 
 export default function Atanasio() {
   useScrollReveal();
@@ -87,9 +88,15 @@ export default function Atanasio() {
       />
 
       <CharacterSection
-        title="El Eco de la Tribuna"
-        description="Un personaje que nace del rugido de las tribunas, de la emoción compartida y de la arquitectura brutalista del estadio. Será revelado como parte de una experiencia artística que conecta deporte, memoria y ciudad."
-        characterName="El Eco de la Tribuna"
+        title="Don Hernán, el utillero"
+        characterName="Don Hernán"
+        characterImage={hernanImg}
+        story={[
+          'Hernán Gallego llegó al Atanasio en 1978, con diecisiete años y un par de guayos prestados. No venía a jugar. Venía a buscar trabajo, lo que fuera, con tal de estar cerca de la cancha. El utilero de turno lo miró de arriba abajo y le dijo: "Mijo, empiece lavando esos petos que huelen a gloria vieja". No se fue nunca más.',
+          'Cuarenta y cinco años después, Don Hernán conoce cada rincón del estadio como si fuera su propia casa. Sabe cuál es el bombillo que parpadea en el túnel de vestuarios, dónde gotea el techo cuando llueve en noviembre, en qué esquina del camerín local hay que darle un golpe al locker para que abra. Infla los balones con la precisión de quien ha contado miles, y jura que puede distinguir, con los ojos cerrados, un balón de entrenamiento de uno de partido.',
+          'Los jugadores pasan: llegan jóvenes, se hacen ídolos, se van. Los técnicos cambian cada temporada. Los directivos rotan. Pero Don Hernán permanece. Ha visto llantos de eliminación y abrazos de campeonato en el mismo camerín. Ha lavado camisetas con barro de derrota y con sudor de gloria. "La camiseta no sabe si ganaste o perdiste", dice mientras dobla con cuidado la número diez. "Uno la lava igual, con el mismo respeto".',
+          'Cada mañana llega al estadio antes que nadie. Abre la puerta del depósito, enciende la luz, y saluda a los balones como si fueran viejos amigos. Luego saca las camisetas, las plancha si hace falta, revisa los botiquines, llena las cantimploras. Nadie le pide que haga todo eso. Simplemente lo hace, porque para Don Hernán el Atanasio no es un lugar de trabajo. Es el lugar donde la vida le hizo sentido.',
+        ]}
       />
 
       <MediaSection

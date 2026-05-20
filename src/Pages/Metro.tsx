@@ -106,7 +106,7 @@ export default function Metro() {
       <Testimonial
         label="Testimonio Real"
         quote="El Metro invitaría a la ciudadanía a ver a quién tenemos al frente y alrededor, a ser conscientes de que quien está al lado también es una persona con sus problemas. Si podemos tender una mano a quien pasa una situación difícil, tendámosla, para que las estaciones dejen de ser lugares de despedida."
-        author="Usuario del Metro"
+        author="Miguel Angel Pena"
         role="Pasajero cotidiano y consciente"
       />
 

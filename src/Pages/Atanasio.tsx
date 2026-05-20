@@ -106,7 +106,7 @@ export default function Atanasio() {
       <Testimonial
         label="Testimonio Real"
         quote="Yo siento que en el Atanasio Girardot han pasado más cosas buenas que malas; guardaría más euforias porque es un estadio que ha llevado años viviendo finales del fútbol. Ser parte de una barra no implica buscar el conflicto; al tener las barras en el estadio le estamos dando folclore y vida al fútbol."
-        author="Barrista de Atlético Nacional"
+        author="Miguel Betancur"
         role="5 años asistiendo seguidos al estadio"
       />
 

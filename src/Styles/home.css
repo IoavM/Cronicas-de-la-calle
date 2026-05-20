@@ -155,6 +155,49 @@
   text-wrap: balance;
 }
 
+/* ---- Drive Section ---- */
+
+.home-drive {
+  background-color: var(--color-fondo-calido);
+  text-align: center;
+}
+
+.home-drive__title {
+  font-size: var(--size-h3);
+  color: var(--color-texto-oscuro);
+  margin-bottom: var(--space-sm);
+}
+
+.home-drive__subtitle {
+  font-size: var(--size-body);
+  color: var(--color-texto-suave);
+  max-width: 500px;
+  margin: 0 auto var(--space-lg) auto;
+  line-height: 1.6;
+}
+
+.home-drive__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 1rem 2.4rem;
+  background-color: var(--color-acento-primario);
+  color: var(--color-blanco);
+  font-family: var(--font-text);
+  font-size: var(--size-body);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 15px rgba(124, 174, 62, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.home-drive__btn:hover {
+  background-color: var(--color-acento-secundario);
+  box-shadow: 0 6px 25px rgba(124, 174, 62, 0.35);
+  transform: translateY(-2px);
+}
+
 /* ============================================================
    RESPONSIVE — 800px
    ============================================================ */

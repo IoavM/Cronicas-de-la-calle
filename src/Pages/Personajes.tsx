@@ -32,16 +32,6 @@ export default function Personajes() {
     );
   }
 
-  // Inyectamos las variables de color del tema cromático de este personaje
-  const themeStyles = {
-    '--char-bg': character.theme.background,
-    '--char-text': character.theme.textColor,
-    '--char-accent': character.theme.accentColor,
-    '--char-glow': character.theme.accentGlow,
-    '--char-label': character.theme.labelColor,
-    '--char-card-bg': character.theme.cardBackground,
-  } as React.CSSProperties;
-
   return (
     <main className="personajes-page personajes-page--detail">
       <div className="container container--wide">

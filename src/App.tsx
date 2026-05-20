@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import { LanguageProvider } from './contexts/LanguageContext';
 import './Styles/global.css';
 
 /* Lazy-loaded pages for performance */
@@ -25,19 +26,22 @@ function LoadingFallback() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Navbar />
-      <Suspense fallback={<LoadingFallback />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/metro" element={<Metro />} />
-          <Route path="/plaza-botero" element={<PlazaBotero />} />
-          <Route path="/atanasio" element={<Atanasio />} />
-          <Route path="/personajes/:id" element={<Personajes />} />
-        </Routes>
-      </Suspense>
-      <Footer />
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Navbar />
+        <Suspense fallback={<LoadingFallback />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/metro" element={<Metro />} />
+            <Route path="/plaza-botero" element={<PlazaBotero />} />
+            <Route path="/atanasio" element={<Atanasio />} />
+            <Route path="/personajes/:id" element={<Personajes />} />
+          </Routes>
+        </Suspense>
+        <Footer />
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
+

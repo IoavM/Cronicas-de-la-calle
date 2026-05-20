@@ -183,3 +183,82 @@
     width: 85%;
   }
 }
+
+/* ============================================================
+   LANG SWITCH — Minimalist Language Selector
+   ============================================================ */
+
+.navbar__nav-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background-color: rgba(26, 26, 26, 0.05);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  border-radius: 16px;
+  transition: var(--transition-smooth);
+  height: 28px;
+}
+
+.navbar--scrolled .lang-switch {
+  background-color: rgba(26, 26, 26, 0.03);
+}
+
+.lang-switch:hover {
+  border-color: rgba(26, 26, 26, 0.15);
+  background-color: rgba(26, 26, 26, 0.08);
+}
+
+.lang-switch__btn {
+  background: none;
+  border: none;
+  padding: 0 4px;
+  font-family: var(--font-text);
+  font-size: 0.72rem;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.5px;
+  color: var(--color-texto-medio);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.lang-switch__btn:hover {
+  color: var(--color-texto-oscuro);
+}
+
+.lang-switch__btn--active {
+  color: var(--color-acento-primario) !important;
+}
+
+.lang-switch__separator {
+  font-size: 0.7rem;
+  color: rgba(26, 26, 26, 0.2);
+  user-select: none;
+}
+
+@media (max-width: 480px) {
+  .navbar__nav-container {
+    gap: var(--space-xs);
+  }
+  
+  .lang-switch {
+    padding: 2px 6px;
+    height: 24px;
+  }
+  
+  .lang-switch__btn {
+    font-size: 0.65rem;
+  }
+}
+

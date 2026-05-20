@@ -44,19 +44,19 @@ export default function PlazaBotero() {
 
   const timelineData = [
     {
-      year: "Ano 2000",
+      year: "Año 2000",
       title: "El Regalo de Botero: Un Museo a Cielo Abierto",
       description: "Fernando Botero dona 23 esculturas monumentales de bronce a la ciudad que lo vio nacer. La plaza frente al Museo de Antioquia es remodelada y transformada en un museo al aire libre, concebido con una promesa democratica: sacar el arte de las elites y entregarlo al pueblo.",
       impact: "Creacion de un espacio publico emblematico que rapidamente se convierte en el corazon cultural de Medellin y atraccion turistica internacional."
     },
     {
-      year: "Anos 2000-2010",
+      year: "Años 2000-2010",
       title: "La Apropiacion Popular y sus Tensiones",
       description: "La plaza se convierte en un ecosistema de supervivencia para miles de personas: vendedores de tinto, fotografos callejeros, artesanos y comerciantes informales hacen de este espacio su sustento diario. Pero junto a la economia popular, emergen problematicas como el microtrafico, la delincuencia y la explotacion sexual.",
       impact: "El centro de Medellin se consolida como un territorio donde la riqueza del arte convive con la cruda realidad de la desigualdad social."
     },
     {
-      year: "Anos 2010-2020",
+      year: "Años 2010-2020",
       title: "El Cerramiento Institucional: Del Espacio Publico al Recinto Segregado",
       description: "Las autoridades locales implementan un fuerte cerramiento institucional. La plaza es rodeada por vallas de seguridad y se establecen puntos de control de la Policia Nacional para regular el acceso, en respuesta a las problematicas historicas del sector.",
       impact: "Para los turistas, la plaza se transforma en un oasis de tranquilidad. Para los habitantes locales y vendedores informales, se convierte en un espacio excluyente con filtros de seguridad que crean segregacion."
@@ -83,7 +83,7 @@ export default function PlazaBotero() {
         label="Historia"
         title="El regalo de un hijo a su ciudad"
         paragraphs={[
-          'En el ano 2000, Fernando Botero dono 23 esculturas en bronce a la ciudad que lo vio nacer. Estas obras, junto con la remodelacion de la plaza frente al Museo de Antioquia, transformaron un espacio urbano deteriorado en un museo al aire libre.',
+          'En el año 2000, Fernando Botero donó 23 esculturas en bronce a la ciudad que lo vio nacer. Estas obras, junto con la remodelacion de la plaza frente al Museo de Antioquia, transformaron un espacio urbano deteriorado en un museo al aire libre.',
           'La Plaza Botero se convirtio rapidamente en el corazon cultural de Medellin. Aqui confluyen turistas y locales, artistas callejeros y vendedores, ninos que juegan entre las esculturas y ancianos que recuerdan como era este lugar antes.',
           'Las figuras voluminosas de Botero no son solo arte: son espejos de una identidad colombiana que celebra lo abundante, lo generoso, lo vital. En cada curva de bronce se refleja una filosofia de vida.',
         ]}

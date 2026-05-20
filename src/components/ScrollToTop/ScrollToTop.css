@@ -17,10 +17,23 @@
   box-shadow: var(--shadow-medium);
   transition: var(--transition-smooth);
   z-index: var(--z-overlay);
-  opacity: 0.8;
+  
+  /* Initial hidden state */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(15px);
 }
 
-.scroll-to-top:hover {
+/* Visible State toggled by React */
+.scroll-to-top.is-visible {
+  opacity: 0.8;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-to-top.is-visible:hover {
   opacity: 1;
   transform: translateY(-4px);
   box-shadow: var(--shadow-elevated);

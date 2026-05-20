@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './ScrollToTop.css';
 
@@ -8,10 +8,30 @@ import './ScrollToTop.css';
  */
 export default function ScrollToTop() {
   const { pathname } = useLocation();
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname]);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      // Show button if page is scrolled down more than 300px
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    // Execute immediately on mount/load
+    toggleVisibility();
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+    };
+  }, []);
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -19,7 +39,7 @@ export default function ScrollToTop() {
 
   return (
     <button
-      className="scroll-to-top"
+      className={`scroll-to-top ${isVisible ? 'is-visible' : ''}`}
       onClick={handleScrollToTop}
       aria-label="Volver arriba"
       id="scroll-to-top-btn"

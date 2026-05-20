@@ -10,6 +10,7 @@ const Home = lazy(() => import('./Pages/Home'));
 const Metro = lazy(() => import('./Pages/Metro'));
 const PlazaBotero = lazy(() => import('./Pages/PlazaBotero'));
 const Atanasio = lazy(() => import('./Pages/Atanasio'));
+const Personajes = lazy(() => import('./Pages/Personajes'));
 
 function LoadingFallback() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/metro" element={<Metro />} />
           <Route path="/plaza-botero" element={<PlazaBotero />} />
           <Route path="/atanasio" element={<Atanasio />} />
+          <Route path="/personajes/:id" element={<Personajes />} />
         </Routes>
       </Suspense>
       <Footer />

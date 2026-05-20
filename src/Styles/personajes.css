@@ -1,0 +1,388 @@
+/* ============================================================
+   PERSONAJES PAGE (CINEMATIC EXHIBITION) — Cronicas de la Calle
+   Estilos usando los colores globales del sitio
+   ============================================================ */
+
+.personajes-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto-oscuro);
+}
+
+/* ---- Error Fallback State ---- */
+
+.personajes-page--error {
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-3xl) var(--space-lg);
+  background-color: var(--color-fondo-crema);
+  color: var(--color-texto-oscuro);
+}
+
+.error-title {
+  font-family: var(--font-editorial);
+  font-size: var(--size-h1);
+  margin-bottom: var(--space-md);
+}
+
+.error-subtitle {
+  font-size: var(--size-body-lg);
+  color: var(--color-texto-suave);
+  margin-bottom: var(--space-xl);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.85;
+}
+
+.error-btn-home {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--color-acento-primario);
+  color: var(--color-blanco);
+  font-family: var(--font-text);
+  font-size: var(--size-small);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-smooth);
+}
+
+.error-btn-home:hover {
+  background-color: var(--color-acento-secundario);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+/* ---- Character Spotlight Layout ---- */
+
+.personajes-page--detail {
+  padding-top: clamp(6.5rem, 10vw, 8rem);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+  overflow-x: hidden;
+}
+
+/* ---- Header & Breadcrumb ---- */
+
+.personajes-detail__header {
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(160, 130, 109, 0.15);
+  padding-bottom: var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.personajes-detail__back-link {
+  font-family: var(--font-text);
+  font-size: var(--size-small);
+  font-weight: var(--weight-semibold);
+  color: var(--color-tierra);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition-fast);
+}
+
+.personajes-detail__back-link:hover {
+  color: var(--color-acento-primario);
+  transform: translateX(-4px);
+}
+
+.personajes-detail__breadcrumb {
+  font-family: var(--font-text);
+  font-size: var(--size-small);
+  color: var(--color-texto-suave);
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.breadcrumb-divider {
+  color: var(--color-acento-primario);
+  font-size: 0.8rem;
+}
+
+.breadcrumb-site {
+  font-weight: var(--weight-semibold);
+  color: var(--color-texto-oscuro);
+}
+
+/* ============================================================
+   1. CINEMATIC WIDESCREEN ARTWORK BANNER
+   ============================================================ */
+
+.personajes-detail__cinematic-wrapper {
+  width: 100%;
+  margin-bottom: var(--space-xl);
+}
+
+.personajes-detail__frame--cinematic {
+  position: relative;
+  background-color: var(--color-fondo-crema);
+  border: 1px solid rgba(160, 130, 109, 0.15);
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  max-height: 520px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.personajes-detail__frame--cinematic::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border: 1px solid rgba(160, 130, 109, 0.08);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+}
+
+.personajes-detail__image--cinematic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* ============================================================
+   TITULO MONUMENTAL
+   ============================================================ */
+
+.personajes-detail__title-section {
+  margin-bottom: var(--space-lg);
+}
+
+.personajes-detail__name {
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  color: var(--color-texto-oscuro);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-md);
+  line-height: 1.1;
+}
+
+.personajes-detail__divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-acento-primario), var(--color-amarillo-sol));
+  border-radius: var(--radius-full);
+}
+
+/* ============================================================
+   2. CITA DESTACADA EN PRIMERA PERSONA
+   ============================================================ */
+
+.personajes-detail__quote-container {
+  margin-bottom: var(--space-2xl);
+  border-left: 3px solid var(--color-acento-primario);
+  padding-left: var(--space-lg);
+  max-width: 1000px;
+}
+
+.personajes-detail__quote {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--color-texto-medio);
+  opacity: 0.95;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* ============================================================
+   3. GRILLA EDITORIAL ASIMETRICA
+   ============================================================ */
+
+.personajes-detail__story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+/* ---- Columna Ficha de Anatomia ---- */
+
+.personajes-detail__specs-col {
+  position: sticky;
+  top: 100px;
+}
+
+.personajes-detail__specs-card {
+  background-color: var(--color-blanco);
+  border: 1px solid rgba(160, 130, 109, 0.1);
+  padding: 2.2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.specs-card__title {
+  font-family: var(--font-text);
+  font-size: var(--size-small);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-tierra);
+  margin-bottom: var(--space-sm);
+  opacity: 0.9;
+}
+
+.specs-card__divider {
+  height: 1px;
+  background-color: rgba(160, 130, 109, 0.15);
+  margin-bottom: var(--space-md);
+}
+
+.specs-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.specs-card__item {
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-bottom: 1px dashed rgba(160, 130, 109, 0.12);
+  padding-bottom: var(--space-xs);
+}
+
+.specs-card__item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.specs-card__label {
+  font-family: var(--font-text);
+  font-size: var(--size-caption);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-texto-suave);
+  opacity: 0.55;
+  font-weight: var(--weight-medium);
+}
+
+.specs-card__value {
+  font-family: var(--font-editorial);
+  font-size: var(--size-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-texto-oscuro);
+  line-height: 1.4;
+}
+
+/* ---- Columna Narrativa ---- */
+
+.personajes-detail__story {
+  margin-bottom: var(--space-2xl);
+}
+
+.personajes-detail__paragraph {
+  font-family: var(--font-editorial);
+  font-size: var(--size-body-lg);
+  color: var(--color-texto-suave);
+  line-height: 1.85;
+  margin-bottom: var(--space-md);
+  text-wrap: pretty;
+}
+
+.personajes-detail__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Boton de Exploracion ---- */
+
+.personajes-detail__actions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.personajes-detail__explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 1rem 2.2rem;
+  background-color: var(--color-acento-primario);
+  color: var(--color-blanco);
+  font-family: var(--font-text);
+  font-size: var(--size-small);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 15px rgba(124, 174, 62, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.personajes-detail__explore-btn:hover {
+  background-color: var(--color-acento-secundario);
+  box-shadow: var(--shadow-glow);
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   RESPONSIVIDAD Y ADAPTACIONES MOVILES
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .personajes-detail__frame--cinematic {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .personajes-detail__story-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .personajes-detail__specs-col {
+    position: static;
+  }
+
+  .personajes-detail__specs-card {
+    padding: 1.8rem;
+  }
+
+  .personajes-detail__frame--cinematic {
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .personajes-detail__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .personajes-detail__frame--cinematic {
+    aspect-ratio: 16/10;
+    max-height: 240px;
+    padding: 0.6rem;
+  }
+
+  .personajes-detail__explore-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

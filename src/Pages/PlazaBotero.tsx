@@ -1,55 +1,72 @@
+import { useState } from 'react';
 import Hero from '../components/Hero/Hero';
 import StorySection from '../components/StorySection/StorySection';
 import Gallery from '../components/Gallery/Gallery';
 import Testimonial from '../components/Testimonial/Testimonial';
 import CharacterSection from '../components/CharacterSection/CharacterSection';
-import MediaSection from '../components/MediaSection/MediaSection';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import '../Styles/plazabotero.css';
 
 import heroBotero from '../assets/images/plaza-botero/hero-botero.png';
 import galleryBotero1 from '../assets/images/plaza-botero/gallery-botero-1.png';
-import guardianaImg from '../assets/images/plaza-botero/guardiana.webp';
+import galleryBotero2 from '../assets/images/plaza-botero/gallery-botero-2.png';
+import galleryBotero3 from '../assets/images/plaza-botero/gallery-botero-3.png';
+import { characters } from '../data/characters';
 
 export default function PlazaBotero() {
   useScrollReveal();
 
+  const [activeTimeline, setActiveTimeline] = useState(0);
+  const guardianaChar = characters.find((c) => c.id === 'guardiana');
+
   const galleryImages = [
     {
       src: heroBotero,
-      alt: 'Vista panorámica de Plaza Botero',
-      caption: 'Plaza Botero, corazón artístico de Medellín',
+      alt: 'Vista panoramica de Plaza Botero',
+      caption: 'Plaza Botero, corazon artistico de Medellin',
     },
     {
       src: galleryBotero1,
       alt: 'Escultura de Fernando Botero',
-      caption: 'Formas volumétricas que dialogan con el espacio público',
+      caption: 'Formas volumetricas que dialogan con el espacio publico',
     },
     {
-      src: heroBotero,
-      alt: 'Plaza Botero y Museo de Antioquia',
-      caption: 'El Museo de Antioquia como telón de fondo',
+      src: galleryBotero2,
+      alt: 'Detalle de escultura de bronce de Botero',
+      caption: 'La textura y patina del bronce monumental',
     },
     {
-      src: galleryBotero1,
-      alt: 'Detalle escultórico de Botero',
-      caption: 'El bronce que cuenta historias de humanidad',
+      src: galleryBotero3,
+      alt: 'Vista general de Plaza Botero al atardecer',
+      caption: 'El arte publico que abraza la calle',
     },
   ];
 
-  const mediaItems = [
+  const timelineData = [
     {
-      type: 'image' as const,
-      src: galleryBotero1,
-      title: 'Volumen y emoción en bronce',
-      description: 'Detalle de una escultura de Botero bajo la luz del mediodía antioqueño.',
+      year: "Ano 2000",
+      title: "El Regalo de Botero: Un Museo a Cielo Abierto",
+      description: "Fernando Botero dona 23 esculturas monumentales de bronce a la ciudad que lo vio nacer. La plaza frente al Museo de Antioquia es remodelada y transformada en un museo al aire libre, concebido con una promesa democratica: sacar el arte de las elites y entregarlo al pueblo.",
+      impact: "Creacion de un espacio publico emblematico que rapidamente se convierte en el corazon cultural de Medellin y atraccion turistica internacional."
     },
     {
-      type: 'image' as const,
-      src: heroBotero,
-      title: 'El espacio público como galería',
-      description: 'La plaza transformada en museo al aire libre.',
+      year: "Anos 2000-2010",
+      title: "La Apropiacion Popular y sus Tensiones",
+      description: "La plaza se convierte en un ecosistema de supervivencia para miles de personas: vendedores de tinto, fotografos callejeros, artesanos y comerciantes informales hacen de este espacio su sustento diario. Pero junto a la economia popular, emergen problematicas como el microtrafico, la delincuencia y la explotacion sexual.",
+      impact: "El centro de Medellin se consolida como un territorio donde la riqueza del arte convive con la cruda realidad de la desigualdad social."
     },
+    {
+      year: "Anos 2010-2020",
+      title: "El Cerramiento Institucional: Del Espacio Publico al Recinto Segregado",
+      description: "Las autoridades locales implementan un fuerte cerramiento institucional. La plaza es rodeada por vallas de seguridad y se establecen puntos de control de la Policia Nacional para regular el acceso, en respuesta a las problematicas historicas del sector.",
+      impact: "Para los turistas, la plaza se transforma en un oasis de tranquilidad. Para los habitantes locales y vendedores informales, se convierte en un espacio excluyente con filtros de seguridad que crean segregacion."
+    },
+    {
+      year: "Actualidad",
+      title: "La Paradoja: Arte Universal, Acceso Restringido",
+      description: "Hoy las figuras monumentales parecen testigos mudos de un espacio atrapado en una contradiccion: un museo internacional de acceso libre convertido en recinto cerrado con requisas y vallas. El microtrafico y la explotacion no desaparecieron; se mudaron a metros de distancia, rodeando las vallas.",
+      impact: "La plaza demuestra que el arte y la seguridad no pueden sostenerse a largo plazo si el precio a pagar es la exclusion de su propia gente."
+    }
   ];
 
   return (
@@ -66,9 +83,9 @@ export default function PlazaBotero() {
         label="Historia"
         title="El regalo de un hijo a su ciudad"
         paragraphs={[
-          'En el año 2000, Fernando Botero donó 23 esculturas en bronce a la ciudad que lo vio nacer. Estas obras, junto con la remodelación de la plaza frente al Museo de Antioquia, transformaron un espacio urbano deteriorado en un museo al aire libre.',
-          'La Plaza Botero se convirtió rápidamente en el corazón cultural de Medellín. Aquí confluyen turistas y locales, artistas callejeros y vendedores, niños que juegan entre las esculturas y ancianos que recuerdan cómo era este lugar antes.',
-          'Las figuras voluminosas de Botero — mujeres, hombres, animales, guerreros — no son solo arte: son espejos de una identidad colombiana que celebra lo abundante, lo generoso, lo vital. En cada curva de bronce se refleja una filosofía de vida.',
+          'En el ano 2000, Fernando Botero dono 23 esculturas en bronce a la ciudad que lo vio nacer. Estas obras, junto con la remodelacion de la plaza frente al Museo de Antioquia, transformaron un espacio urbano deteriorado en un museo al aire libre.',
+          'La Plaza Botero se convirtio rapidamente en el corazon cultural de Medellin. Aqui confluyen turistas y locales, artistas callejeros y vendedores, ninos que juegan entre las esculturas y ancianos que recuerdan como era este lugar antes.',
+          'Las figuras voluminosas de Botero no son solo arte: son espejos de una identidad colombiana que celebra lo abundante, lo generoso, lo vital. En cada curva de bronce se refleja una filosofia de vida.',
         ]}
         image={galleryBotero1}
         imageAlt="Escultura de Fernando Botero en la plaza"
@@ -76,48 +93,140 @@ export default function PlazaBotero() {
       />
 
       <Gallery
-        label="Galería Visual"
+        label="Galeria Visual"
         title="El arte que habita la calle"
         images={galleryImages}
       />
 
       <Testimonial
-        label="Testimonio"
-        quote="Yo vengo aquí todos los días. Me siento junto a la gorda y leo el periódico. Esta plaza me devolvió un pedazo de ciudad que creí perdido. Aquí la gente se mira, se saluda, se reconoce."
-        author="Doña Lucía Montoya"
-        role="Vecina del centro, visitante diaria desde 2001"
+        label="Testimonio Real"
+        quote="El dueno real es el vendedor que esta aqui desde la manana hasta la noche ganandose el sustento. El turista solo viene de pasada un rato, se toma la foto y se va. Nosotros somos los que mantenemos el movimiento del lugar todos los dias."
+        author="Vendedor informal de la plaza"
+        role="Trabajador del centro historico"
       />
 
-      <CharacterSection
-        title="La Guardiana de las Formas"
-        characterName="La Guardiana de las Formas"
-        characterImage={guardianaImg}
-        imagePosition="left"
-        story={[
-          'Ella llegó a la plaza el mismo día que las esculturas. Mientras los camiones descargaban las enormes figuras de bronce y los obreros las instalaban con cuidado sobre sus pedestales, una mujer se sentó en la banca más cercana y no se volvió a ir.',
-          'La Guardiana no tiene nombre conocido. Los vendedores de tintos la llaman "Doña Forma", los lustrabotas le dicen "La Señora de las Gordas", los niños simplemente la señalan y preguntan si ella también es de bronce. Lleva siempre un vestido amplio que parece flotar cuando camina entre las esculturas, como si el viento la tratara con la misma delicadeza con que Botero esculpía sus figuras.',
-          'Cada mañana hace su ronda. Toca cada escultura con la palma abierta, como si verificara que sigan ahí, que nadie se las haya llevado en la noche. Les habla en voz baja. Les cuenta las noticias del día, los chismes del barrio, los nombres de los turistas que vinieron a fotografiarlas. Dice que las esculturas le responden, que el bronce tibio del mediodía es su forma de decir gracias.',
-          'La Guardiana de las Formas es la generosidad hecha presencia. Es la certeza de que el arte público no pertenece a un museo ni a un coleccionista, sino a quien decide, cada día, sentarse frente a él y hacerle compañía. Ella cuida las formas porque entiende algo que muchos olvidan: lo bello solo sobrevive si alguien lo mira con amor.',
-        ]}
-      />
+      {/* ============================================================
+          SECCION DE CONFLICTO SOCIAL — El Espejo de las Dos Medellines
+          ============================================================ */}
+      <section className="botero-conflict-section section" id="botero-conflict">
+        <div className="container">
+          <div className="reveal">
+            <span className="section-label">Contraste Social</span>
+            <h2 className="conflict-title">El Espejo de las Dos Medellines</h2>
+            <p className="conflict-intro text-balance">
+              Concebida como un museo a cielo abierto, la Plaza Botero nacio con una promesa democratica: sacar el arte de las elites y entregarlo al pueblo. Sin embargo, hoy es el epicentro de una profunda contradiccion social, donde el arte internacional choca de frente con la cruda realidad del centro urbano.
+            </p>
 
-      <MediaSection
-        label="Multimedia"
-        title="Experiencia inmersiva"
-        description="Explora Plaza Botero a través de diferentes formatos documentales."
-        items={mediaItems}
-      />
+            {/* Stepper Interactiva */}
+            <div className="botero-timeline-wrapper">
+              <div className="timeline-stepper">
+                {timelineData.map((node, index) => (
+                  <button
+                    key={index}
+                    className={`timeline-step-btn ${activeTimeline === index ? 'active' : ''}`}
+                    onClick={() => setActiveTimeline(index)}
+                  >
+                    <span className="step-dot"></span>
+                    <span className="step-year">{node.year}</span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="timeline-detail-card">
+                <span className="timeline-detail-period">{timelineData[activeTimeline].year}</span>
+                <h3 className="timeline-detail-title">{timelineData[activeTimeline].title}</h3>
+                <p className="timeline-detail-desc">{timelineData[activeTimeline].description}</p>
+                <div className="timeline-detail-impact">
+                  <strong>Impacto Social:</strong>
+                  <p>{timelineData[activeTimeline].impact}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Las Multiples Caras del Conflicto */}
+            <div className="conflict-faces">
+              <h3 className="faces-title">Las Caras de la Contradiccion</h3>
+              <div className="faces-grid">
+                <div className="face-card">
+                  <div className="face-card-icon-wrapper">
+                    <svg viewBox="0 0 24 24" width="32" height="32" className="face-card-icon">
+                      <path fill="currentColor" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                  </div>
+                  <h4>Cerramiento y Segregacion</h4>
+                  <p>Las vallas de seguridad transformaron un espacio publico en un recinto controlado. Para los turistas es un oasis de tranquilidad; para los habitantes locales, una frontera que restringe el derecho a circular libremente por su propia ciudad.</p>
+                </div>
+
+                <div className="face-card">
+                  <div className="face-card-icon-wrapper">
+                    <svg viewBox="0 0 24 24" width="32" height="32" className="face-card-icon">
+                      <path fill="currentColor" d="M21 7.28V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-2.28c.59-.35 1-.98 1-1.72V9c0-.74-.41-1.37-1-1.72zM20 9v6h-7V9h7zM5 19V5h14v2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h6v2H5z"/>
+                    </svg>
+                  </div>
+                  <h4>Exclusion de los Vulnerables</h4>
+                  <p>Al priorizar la seguridad del turista, la intervencion margino a vendedores de tinto, fotografos tradicionales y artesanos. Los habitantes de calle fueron desplazados a las calles aledanas en lugar de resolver las problematicas de raiz.</p>
+                </div>
+
+                <div className="face-card">
+                  <div className="face-card-icon-wrapper">
+                    <svg viewBox="0 0 24 24" width="32" height="32" className="face-card-icon">
+                      <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                    </svg>
+                  </div>
+                  <h4>La Paradoja de Botero</h4>
+                  <p>Fernando Botero defendia que sus esculturas pertenecian a la gente, sin distinciones de clase. Hoy, sus figuras monumentales son testigos mudos de un espacio donde la apropiacion cultural ciudadana fue reemplazada por el consumo turistico controlado.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* El Camino hacia la Solucion */}
+            <div className="conflict-solutions">
+              <div className="solutions-grid">
+                <div className="solution-block solution-block--coercion">
+                  <h4>Dimension Ideal</h4>
+                  <p>Museo internacional de acceso libre, apropiacion cultural ciudadana e integracion urbana que democratiza el arte para todos los sectores de la sociedad sin distincion.</p>
+                  <span className="solution-tag">Promesa Original</span>
+                </div>
+                <div className="solution-block solution-block--social">
+                  <h4>Dimension Real</h4>
+                  <p>Recinto cerrado con requisas y vallas, espacio enfocado en el consumo turistico y frontera que acentua la brecha de clases entre el adentro "seguro" y el afuera "peligroso".</p>
+                  <span className="solution-tag">Realidad Actual</span>
+                </div>
+              </div>
+
+              <div className="conflict-conclusion-box">
+                <p className="conflict-conclusion text-balance">
+                  Plaza Botero es el reflejo perfecto de los retos que enfrenta Medellin. Es el espejo de una ciudad que se debate entre mostrar su cara mas innovadora al mundo, o asumir el reto de sanar las profundas desigualdades sociales que laten en su propio centro. El arte y la seguridad no pueden sostenerse si el precio es la exclusion de su propia gente.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {guardianaChar && (
+        <CharacterSection
+          title={guardianaChar.title}
+          characterName={guardianaChar.name}
+          characterImage={guardianaChar.image}
+          imagePosition={guardianaChar.imagePosition}
+          description={guardianaChar.description}
+          showGlobalLink={true}
+          characterId={guardianaChar.id}
+        />
+      )}
 
       {/* Reflection */}
       <section className="botero-reflection section" id="botero-reflection">
         <div className="container container--narrow">
           <div className="reveal">
             <span className="section-label" style={{ display: 'block', paddingLeft: 0, textAlign: 'center' }}>
-              Reflexión
+              Reflexion
             </span>
             <p className="botero-reflection__text">
-              "El arte no necesita paredes. A veces, lo único que necesita es una plaza abierta,
-              la luz del sol y la mirada de quien pasa."
+              "El arte no necesita paredes. Pero cuando le ponen vallas,
+              deja de pertenecer a quien mas lo necesita."
             </p>
           </div>
         </div>
